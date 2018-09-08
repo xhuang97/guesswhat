@@ -1,23 +1,34 @@
 from django.shortcuts import render
-
-# Create your views here.
-from django.http import HttpResponse
-from videos.models import Video
-from rest_framework import viewsets
-
-
-def index(request):
-    num_videos = Video.objects.all().count()
-    # return HttpResponse("Hello, world. You're at the polls index.")
-    context = {
-        'num_videos': num_videos,
-    }
-    return render(request, 'index.html', context = context)
+from django.contrib.auth.models import User
+from rest_framework import viewsets, permissions
+from .models import Video
+from . import serializers
+from .permissions import ReadOnly
 
 
-
-class VideoViewSet(viewsets.ModelViewSet):
+def index(request, path=''):
     """
-    Provides basic CRUD functions for the Video model
+    The home page. This renders the container for the single-page app.
+    """
+    return render(request, 'index.html')
+
+
+class UserViewSet(viewsets.ModelViewSet):
+    """
+    Provides basic CRUD functions for the User model
+    """
+    queryset = User.objects.all()
+    serializer_class = serializers.UserSerializer
+    permission_classes = (ReadOnly, )
+
+
+class BlogPostViewSet(viewsets.ModelViewSet):
+    """
+    Provides basic CRUD functions for the Blog Post model
     """
     queryset = Video.objects.all()
+    serializer_class = serializers.VideoSerializer
+    permission_classes = (permissions.IsAuthenticatedOrReadOnly, )
+
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)
