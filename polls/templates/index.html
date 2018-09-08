@@ -1,0 +1,12 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Guess What</h1>
+  <p>Welcome to GUESS WHAT, a website developed by <em>ChickenButts</em>!</p>
+  <h2>Dynamic content</h2>
+  <p>The website has the following:</p>
+  <ul>
+    <li><strong>Questions:</strong> {{ num_questions }}</li>
+    <li><strong>Choices:</strong> {{ num_choices }}</li>
+  </ul>
+{% endblock %}
