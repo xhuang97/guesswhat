@@ -1,12 +1,15 @@
-Initial Setup:
 
-Need to Install:
+
+### Requirement
 + Python 3.5 or higher (Python 2.x is not supported by Django 2.x)
 + Pipenv
++ Pip
 + Node v8.x or higher
 + NPM v5.x or higher
 
+### Setup
 ```
+pip install pillow
 pipenv install
 pipenv shell
 cd videos/front-end
