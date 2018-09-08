@@ -1,3 +1,16 @@
+Initial Setup:
+
+```
+pipenv install
+pipenv shell
+cd microblog/front-end
+npm install
+ng build
+cd ../..
+python manage.py runserver
+
+```
+
 To Yiwen:
 
 + Don't use the /polls/, it's just a tutorial example
