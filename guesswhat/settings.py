@@ -31,7 +31,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'rest_framework',
     'videos.apps.VideosConfig',
     'polls.apps.PollsConfig',
     'django.contrib.admin',

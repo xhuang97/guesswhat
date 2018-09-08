@@ -35,6 +35,25 @@ export class AppComponent implements OnInit {
       password: ''
     };
   }
+  title = 'Classroom Smartboard!';
+  showVideo = false;
+  showHome = true;
+  showTeam = false;
+  onClickHome(){
+    this.showVideo = false;
+    this.showTeam = false;
+    this.showHome = true;
+  }
+  onClickTeam(){
+    this.showVideo = false;
+    this.showHome = false;
+    this.showTeam = true;
+  }
+  onClickVideo(){
+      this.showHome = false;
+      this.showTeam = false;
+      this.showVideo = true;
+  }
 
   login() {
     this._userService.login({'username': this.user.username, 'password': this.user.password});
