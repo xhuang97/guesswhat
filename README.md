@@ -9,7 +9,7 @@ Need to Install:
 ```
 pipenv install
 pipenv shell
-cd microblog/front-end
+cd videos/front-end
 npm install
 ng build
 cd ../..
