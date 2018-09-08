@@ -20,5 +20,5 @@ urlpatterns = [
     path('videos/', include('videos.urls')),
     path('polls/', include('polls.urls')),
     path('admin/', admin.site.urls),
-    path('mjpg/video.mjpg', include('mjpeg.urls')),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    path('mjpg/', include('mjpeg.urls')),
+]
