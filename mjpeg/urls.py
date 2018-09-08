@@ -3,5 +3,5 @@ from . import views
 
 
 urlpatterns = [
-    path('video.mjpg', views.mjpeg, name='mjpeg'),
+    path('<str:source>.mjpg', views.mjpeg),
 ]
