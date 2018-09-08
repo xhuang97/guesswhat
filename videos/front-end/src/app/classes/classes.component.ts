@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { CLASSES } from '../mockclass';
+import { newClass } from '../newclass';
 @Component({
   selector: 'app-classes',
   templateUrl: './classes.component.html',

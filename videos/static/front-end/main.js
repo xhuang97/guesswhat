@@ -293,7 +293,7 @@ var BlogPostService = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "/* DashboardComponent's private CSS styles */\n[class*='col-'] {\n    float: left;\n    padding-right: 20px;\n    padding-bottom: 20px;\n  }\n[class*='col-']:last-of-type {\n    padding-right: 0;\n  }\na {\n    text-decoration: none;\n  }\n*, *:after, *:before {\n    box-sizing: border-box;\n  }\nh3 {\n    widows: 200px; \n    margin: 50px;\n    color: #4053AF;\n    margin-bottom: 0;\n  }\nh4 {\n    position: relative;\n  }\n.grid {\n    margin: 50px;\n  }\n.col-1-4 {\n    width: 25%;\n    height: 10%;\n  }\n.module {\n    padding: 20px;\n    text-align: center;\n    color: #eee;\n    height: 120px;\n    background-color: #4053AF;\n    border-radius: 2px;\n  }\n.module:hover {\n    background-color: #EEE;\n    cursor: pointer;\n    color: #4053AF;\n  }\n.grid-pad {\n    padding: 10px 0;\n  }\n.grid-pad > [class*='col-']:last-of-type {\n    padding-right: 20px;\n  }\n@media (max-width: 600px) {\n    .module {\n      font-size: 10px;\n      max-height: 75px; }\n  }\n@media (max-width: 1024px) {\n    .grid {\n      margin: 0;\n    }\n    .module {\n      min-width: 60px;\n    }\n  }\n.hr {\n    display: block;\n    margin: 20px 0 20px 0;\n    border-top: 1px solid rgba(0, 0, 0, .12);\n    \n  }\n/*\n  Copyright 2017-2018 Google Inc. All Rights Reserved.\n  Use of this source code is governed by an MIT-style license that\n  can be found in the LICENSE file at http://angular.io/license\n  */"
 
 /***/ }),
 
@@ -304,7 +304,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  classes works!\n</p>\n"
+module.exports = "<h3>Your Current Classes</h3>\n<mat-divider class =\"hr\"></mat-divider>\n<div class=\"grid grid-pad\">\n  <a *ngFor=\"let class of newclass\" class=\"col-1-4\">\n    <div class=\"module hero\">\n      <h4>{{class.name}}</h4>\n    </div>\n  </a>\n</div>"
 
 /***/ }),
 
@@ -367,7 +367,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  home works!\n</p>\n"
+module.exports = "<div style=\"text-align:center\">\n  <h1>\n    Welcome to SmartBoard!\n  </h1>\n  <img width=\"300\" alt=\"Angular Logo\" src=\"../assets/images/logo.jpeg\">\n</div>\n\n<ul>\n  <h4>\n    SmartBoard is an app that can stream blackboard during classes. They are a good tool to help you get focused.\n    Please click on the menu to explore.\n    </h4>\n</ul>"
 
 /***/ }),
 
@@ -465,7 +465,7 @@ var MaterialModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "/* DashboardComponent's private CSS styles */\n[class*='col-'] {\n    float: left;\n    padding-right: 20px;\n    padding-bottom: 20px;\n  }\n[class*='col-']:last-of-type {\n    padding-right: 0;\n  }\na {\n    text-decoration: none;\n  }\n*, *:after, *:before {\n    box-sizing: border-box;\n  }\nh3 {\n    widows: 200px; \n    margin: 50px;\n    color: #4053AF;\n    margin-bottom: 0;\n  }\nh4 {\n    position: relative;\n  }\n.grid {\n    margin: 50px;\n  }\n.col-1-4 {\n    width: 25%;\n    height: 10%;\n  }\n.module {\n    padding: 20px;\n    text-align: center;\n    color: #eee;\n    height: 175px;\n    width: 175px;\n    background-image: url(\"elvin.jpg\");\n    background-repeat: no-repeat;\n    background-size: cover;\n    border-radius: 2px;\n  }\n.module1 {\n    padding: 20px;\n    text-align: center;\n    color: #eee;\n    height: 175px;\n    width: 175px;\n    background-image: url(\"yiwen.jpg\");\n    background-repeat: no-repeat;\n    background-size: cover;\n    border-radius: 2px;\n  }\n.module:hover {\n    background-color: #EEE;\n    cursor: pointer;\n    color: #4053AF;\n  }\n.module1:hover {\n    background-color: #EEE;\n    cursor: pointer;\n    color: #4053AF;\n  }\n.module2 {\n    padding: 20px;\n    text-align: center;\n    color: #eee;\n    height: 175px;\n    width: 175px;\n    background-image: url(\"killian.jpg\");\n    background-repeat: no-repeat;\n    background-size: cover;\n    border-radius: 2px;\n  }\n.module2:hover {\n    background-color: #EEE;\n    cursor: pointer;\n    color: #4053AF;\n  }\n.module3 {\n    padding: 20px;\n    text-align: center;\n    color: #eee;\n    height: 175px;\n    width: 175px;\n    background-image: url(\"jared.jpg\");\n    background-repeat: no-repeat;\n    background-size: cover;\n    border-radius: 2px;\n  }\n.module3:hover {\n    background-color: #EEE;\n    cursor: pointer;\n    color: #4053AF;\n  }\n.grid-pad {\n    padding: 10px 0;\n  }\n.grid-pad > [class*='col-']:last-of-type {\n    padding-right: 20px;\n  }\n@media (max-width: 600px) {\n    .module {\n      font-size: 10px;\n      max-height: 75px; }\n  }\n@media (max-width: 1024px) {\n    .grid {\n      margin: 0;\n    }\n    .module {\n      min-width: 60px;\n    }\n  }\n/*\n  Copyright 2017-2018 Google Inc. All Rights Reserved.\n  Use of this source code is governed by an MIT-style license that\n  can be found in the LICENSE file at http://angular.io/license\n  */"
 
 /***/ }),
 
@@ -476,7 +476,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  team works!\n</p>\n"
+module.exports = "<h3>Meet Team Guess What?</h3>\n<div class=\"grid grid-pad\">\n  <a class=\"col-1-4\">\n    <div class=\"module hero\">\n      <h4>Elvin Gu(Elvina)</h4>\n    </div>\n  </a>\n  <a class=\"col-1-4\">\n      <div class=\"module1 hero\">\n        <h4>Yiwen Yuan</h4>\n      </div>\n  </a>\n  <a class=\"col-1-4\">\n      <div class=\"module2 hero\">\n        <h4>Killian Huang</h4>\n      </div>\n  </a>\n  <a class=\"col-1-4\">\n      <div class=\"module3 hero\">\n        <h4>Jared Something</h4>\n      </div>\n  </a>\n</div>"
 
 /***/ }),
 
