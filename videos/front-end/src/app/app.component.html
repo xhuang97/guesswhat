@@ -1,3 +1,38 @@
+
+<mat-toolbar color="primary">
+
+  <button mat-icon-button [matMenuTriggerFor]="menu" >
+    <mat-icon>menu</mat-icon>
+  </button>
+  <h1 class="example-app-name">Team Guess What?</h1>
+  <mat-menu #menu="matMenu" [overlapTrigger]="false">
+    <button mat-menu-item (click)="onClickHome()">
+      <mat-icon>home</mat-icon>
+      <span>Home</span>
+    </button>
+    <button mat-menu-item (click)="onClickTeam()">
+      <mat-icon>people_outline</mat-icon>
+      <span>Our Team</span>
+    </button>
+    <button mat-menu-item (click)="onClickVideo()">
+      <mat-icon>videocam</mat-icon>
+      <span>Classes</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>exit_to_app</mat-icon>
+      <span>Logout</span>
+    </button>
+  </mat-menu>
+</mat-toolbar>
+
+<app-home [hidden]="!showHome">
+</app-home>
+<app-classes [hidden]="!showVideo">
+</app-classes>
+<app-team [hidden]="!showTeam">
+</app-team>
+
+
 <h2>Log In</h2>
 <div class="row" *ngIf="!_userService.token">
   <div class="col-sm-4">
