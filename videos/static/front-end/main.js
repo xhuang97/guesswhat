@@ -124,9 +124,9 @@ var AppComponent = /** @class */ (function () {
                 var post = _a[_i];
                 post.date = new Date(post.date);
             }
-        }, 
+        },
         // the second argument is a function which runs on error
-        function (err) { return console.error(err); }, 
+        function (err) { return console.error(err); },
         // the third argument is a function which runs on completion
         function () { return console.log('done loading posts'); });
     };
@@ -367,7 +367,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"text-align:center\">\n  <h1>\n    Welcome to SmartBoard!\n  </h1>\n  <img width=\"300\" alt=\"Angular Logo\" src=\"../assets/images/logo.jpeg\">\n</div>\n\n<ul>\n  <h4>\n    SmartBoard is an app that can stream blackboard during classes. They are a good tool to help you get focused.\n    Please click on the menu to explore.\n    </h4>\n</ul>"
+module.exports = "<div style=\"text-align:center\">\n  <h1>\n    Welcome to SmartBoard!\n  </h1>\n  <img width=\"300\" alt=\"Angular Logo\" src=\"/static/front-end/assets/images/logo.jpeg\">\n</div>\n\n<ul>\n  <h4>\n    SmartBoard is an app that can stream blackboard during classes. They are a good tool to help you get focused.\n    Please click on the menu to explore.\n    </h4>\n</ul>"
 
 /***/ }),
 
