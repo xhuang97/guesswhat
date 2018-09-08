@@ -539,7 +539,7 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/jessie/Desktop/PennApps/guesswhat/videos/front-end/src/styles.css */"./src/styles.css");
+module.exports = __webpack_require__(/*! /Users/yiwenyuan/Documents/smartboard/guesswhat/videos/front-end/src/styles.css */"./src/styles.css");
 
 
 /***/ })
