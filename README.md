@@ -20,6 +20,13 @@ python manage.py runserver
 
 ```
 
+
+### Basic Routine to Start Server
+```
+pipenv shell
+python manage.py runserver
+```
+
 To Yiwen:
 
 + Don't use the /polls/, it's just a tutorial example
