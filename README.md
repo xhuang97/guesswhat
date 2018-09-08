@@ -1,10 +1,10 @@
 Initial Setup:
 
 Need to Install:
-+Python 3.5 or higher (Python 2.x is not supported by Django 2.x)
-+Pipenv
-+Node v8.x or higher
-+NPM v5.x or higher
++ Python 3.5 or higher (Python 2.x is not supported by Django 2.x)
++ Pipenv
++ Node v8.x or higher
++ NPM v5.x or higher
 
 ```
 pipenv install
