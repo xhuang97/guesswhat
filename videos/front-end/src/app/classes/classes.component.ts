@@ -7,7 +7,7 @@ import { newClass } from '../newclass';
   styleUrls: ['./classes.component.css']
 })
 export class ClassesComponent implements OnInit {
-
+  newclass = CLASSES;
   constructor() { }
 
   ngOnInit() {
