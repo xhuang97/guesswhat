@@ -8,8 +8,11 @@ import { newClass } from '../newclass';
 })
 export class ClassesComponent implements OnInit {
   newclass = CLASSES;
+  showclassroom = false;
   constructor() { }
-
+  onClickClassroom(){
+    this.showclassroom = true;
+  }
   ngOnInit() {
   }
 

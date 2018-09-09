@@ -2,9 +2,11 @@
 </h3>
 <mat-divider class ="hr"></mat-divider>
 <div class="grid grid-pad">
-  <a *ngFor="let class of newclass" class="col-1-4">
+  <a *ngFor="let class of newclass" class="col-1-4" >
     <div class="module hero">
       <h4>{{class.name}}</h4>
     </div>
   </a>
+  <button mat-button (click)="onClickClassroom()">Show Live Stream</button>
+  <img width="300" alt="Angular Logo" src="vid1.mjpg" [hidden]="!showclassroom">
 </div>
