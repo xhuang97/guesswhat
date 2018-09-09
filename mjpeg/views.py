@@ -4,7 +4,7 @@ from django.conf import settings
 from os import listdir
 from os.path import isfile, isdir, join
 from PIL import Image
-import time
+import bisect, time
 # Create your views here.
 
 def index(request):
@@ -41,30 +41,36 @@ def creategenerator_mjpegstream(filelist, source):
                 yield (chunkheader + image + boundary)
                 time.sleep(settings.CHUNK_DELAY)
 
-def creategenerator_mjpeglivestream(filelist, source):
+def creategenerator_mjpeglivestream(path, source):
     # Load image files to RAM
-    images = []
-    filelist.sort()
-    try: 
-        for filename in filelist:
-            with open(settings.BASE_DIR + '/static/' + source + '/' + filename, "rb") as f:
-                image = f.read()
-                images.append(image)
-                f.close()
-    except Exception as e:
-        images = []
-        red = Image.new('RGBA', (1, 1), (255,0,0,0))
-        image = b''
-        red.save(image, "JPEG")
-        images.append(image)
+    filelist = []
+    fileset = set()
+    fileset.add("settings.txt")
+    fileset.add("default.jpg")
+    last = "default.jpg"
+    with open(settings.BASE_DIR + '/static/' + source + '/' + last, "rb") as f:
+        image = f.read()
     
+    chunkheader = b"Content-Type: image/jpeg\nContent-Length: " + str(len(image)).encode('ascii') + b"\n\n"
+    boundary = b"\n--myboundary\n"
+    yield (chunkheader + image + boundary)
+    
+    time.sleep(settings.CHUNK_DELAY)
     # start streaming loop
     while True:
-      for image in images:
-                chunkheader = b"Content-Type: image/jpeg\nContent-Length: " + str(len(image)).encode('ascii') + b"\n\n"
-                boundary = b"\n--myboundary\n"
-                yield (chunkheader + image + boundary)
-                time.sleep(settings.CHUNK_DELAY)
+      filelist = []
+      for f in listdir(path):
+          if f not in fileset:
+              fileset.add(f)
+              filelist.append(f)
+      filelist.sort()
+      if len(filelist) > 0:
+          last = filelist[-1]
+      with open(settings.BASE_DIR + '/static/' + source + '/' + last, "rb") as f:
+          image = f.read()
+      chunkheader = b"Content-Type: image/jpeg\nContent-Length: " + str(len(image)).encode('ascii') + b"\n\n"
+      yield (chunkheader + image + boundary)
+      time.sleep(settings.CHUNK_DELAY)
 
 def mjpeg(request, source='vid1'):
     path = settings.BASE_DIR + '/static/' + source + '/'
@@ -80,8 +86,7 @@ def mjpeg(request, source='vid1'):
             raise http.Http404("No files in folder")
         mjpegstream = creategenerator_mjpegstream(filelist, source)
     elif option.startswith("dynamic"):
-        return http.HttpResponseServerError()
-        mjpegstream = creategenerator_mjpeglivestream(filelist, source)
+        mjpegstream = creategenerator_mjpeglivestream(path, source)
     else:
         return http.HttpResponseServerError()
     return http.StreamingHttpResponse(mjpegstream, content_type='multipart/x-mixed-replace;boundary=myboundary')
