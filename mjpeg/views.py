@@ -15,12 +15,12 @@ def css(request, templatefile) :
 
 def viewer(request, templatefile):
     return render(request, 'view/' + templatefile, {})
-    
+
 def creategenerator_mjpegstream(filelist, source):
     # Load image files to RAM
     images = []
     filelist.sort()
-    try: 
+    try:
         for filename in filelist:
             with open(settings.BASE_DIR + '/static/' + source + '/' + filename, "rb") as f:
                 image = f.read()
@@ -32,7 +32,7 @@ def creategenerator_mjpegstream(filelist, source):
         image = b''
         red.save(image, "JPEG")
         images.append(image)
-    
+
     # start streaming loop
     while True:
       for image in images:
@@ -50,11 +50,11 @@ def creategenerator_mjpeglivestream(path, source):
     last = "default.jpg"
     with open(settings.BASE_DIR + '/static/' + source + '/' + last, "rb") as f:
         image = f.read()
-    
+
     chunkheader = b"Content-Type: image/jpeg\nContent-Length: " + str(len(image)).encode('ascii') + b"\n\n"
     boundary = b"\n--myboundary\n"
     yield (chunkheader + image + boundary)
-    
+
     time.sleep(settings.CHUNK_DELAY)
     # start streaming loop
     while True:
@@ -89,4 +89,5 @@ def mjpeg(request, source='vid1'):
         mjpegstream = creategenerator_mjpeglivestream(path, source)
     else:
         return http.HttpResponseServerError()
-    return http.StreamingHttpResponse(mjpegstream, content_type='multipart/x-mixed-replace;boundary=myboundary')
+    response = http.StreamingHttpResponse(mjpegstream, content_type='multipart/x-mixed-replace;boundary=myboundary')
+    return response
