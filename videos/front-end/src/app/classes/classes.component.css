@@ -1,9 +1,9 @@
 /* DashboardComponent's private CSS styles */
 .center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
+
+  margin-left: 10%;
+  margin-right: 10%;
+  width:auto;
 }
 [class*='col-'] {
     float: left;
