@@ -1,15 +1,17 @@
-
+# LiveBoard
+LiveBoard processes input from two cameras to update a digital representation of a drawing board.  
+Live feed accessible via `http://<server>/mjpg/live.mjpg`
 
 ### Requirement
-+ Python 3.5 or higher (Python 2.x is not supported by Django 2.x)
-+ Pipenv
-+ Pip
++ Python 3.5 or higher
 + Node v8.x or higher
-+ NPM v5.x or higher
++ NPM v5.x or higher  
+  Django 2.1.1 via Pip  
+  Pipenv via Pip  
+  Pillow via Pip
 
 ### Setup
 ```
-pip install pillow
 pipenv install
 pipenv shell
 cd videos/front-end
@@ -27,8 +29,3 @@ pipenv shell
 python manage.py runserver
 ```
 
-To Yiwen:
-
-+ Don't use the /polls/, it's just a tutorial example
-+ Most things that you are going to change are probably under /videos/templates for your .html files
-+ If you have CSS stuff or angular stuff, please look up how to incorporate it with Django app
