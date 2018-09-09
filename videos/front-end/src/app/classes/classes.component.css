@@ -18,7 +18,7 @@
   h3 {
     widows: 200px; 
     margin: 50px;
-    color: #4053AF;
+    color: #2A3A75;
     margin-bottom: 0;
   }
   h4 {
@@ -36,13 +36,13 @@
     text-align: center;
     color: #eee;
     height: 120px;
-    background-color: #4053AF;
+    background-color: #2A3A75;
     border-radius: 2px;
   }
   .module:hover {
     background-color: #EEE;
     cursor: pointer;
-    color: #4053AF;
+    color: #2A3A75;
   }
   .grid-pad {
     padding: 10px 0;
@@ -66,7 +66,7 @@
   
   .hr {
     display: block;
-    margin: 20px 0 20px 0;
+    margin: 50px 0 50px 0;
     border-top: 1px solid rgba(0, 0, 0, .12);
     
   }

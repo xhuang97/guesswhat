@@ -1,28 +1,23 @@
+<div class="bg">
+  <mat-toolbar color="primary">
 
-<mat-toolbar color="primary">
-
-  <button mat-icon-button [matMenuTriggerFor]="menu" >
-    <mat-icon>menu</mat-icon>
-  </button>
-  <h1 class="example-app-name">Team Guess What?</h1>
-  <mat-menu #menu="matMenu" [overlapTrigger]="false">
-    <button mat-menu-item (click)="onClickHome()">
-      <mat-icon>home</mat-icon>
-      <span>Home</span>
-    </button>
-    <button mat-menu-item (click)="onClickTeam()">
-      <mat-icon>people_outline</mat-icon>
-      <span>Our Team</span>
-    </button>
-    <button mat-menu-item (click)="onClickVideo()">
-      <mat-icon>videocam</mat-icon>
-      <span>Classes</span>
-    </button>
-    <button mat-menu-item>
-      <mat-icon>exit_to_app</mat-icon>
-      <span>Logout</span>
-    </button>
-  </mat-menu>
+    <img width=240px height=160px src="/static/front-end/assets/images/logo.png">
+      <button mat-menu-item (click)="onClickHome()" class="noborder" >
+        <mat-icon>home</mat-icon>
+        <span>Home</span>
+      </button>
+      <button mat-menu-item (click)="onClickTeam()" class="noborder" >
+        <mat-icon>people_outline</mat-icon>
+        <span>Our Team</span>
+      </button>
+      <button mat-menu-item (click)="onClickVideo()" class="noborder" >
+        <mat-icon>videocam</mat-icon>
+        <span text-align="center">Classes</span>
+      </button>
+      <button mat-menu-item class="noborder" >
+        <mat-icon>exit_to_app</mat-icon>
+        <span>Logout</span>
+      </button>
 </mat-toolbar>
 
 <app-home [hidden]="!showHome">
@@ -31,6 +26,7 @@
 </app-classes>
 <app-team [hidden]="!showTeam">
 </app-team>
+</div>
 <!--
 
 <h2>Log In</h2>

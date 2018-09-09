@@ -36,10 +36,11 @@ export class AppComponent implements OnInit {
     };
   }
   title = 'Classroom Smartboard!';
-  showVideo = false;
-  showHome = true;
+  showVideo = true;
+  showHome = false;
   showTeam = false;
   onClickHome(){
+
     this.showVideo = false;
     this.showTeam = false;
     this.showHome = true;

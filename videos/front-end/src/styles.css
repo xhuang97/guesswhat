@@ -1,2 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+body {
+  /*background: url('https://fbcd.co/images/products/61e4f93baa251a8d8c5475e81e1cd394_resize.jpg') no-repeat center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;*/
+  background-color:#eee;
+}
