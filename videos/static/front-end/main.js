@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".inside {\n  position: absolute;\n  top: 0px;\n  left: 0px;\n}\n.fill-remaining-space {\n  /* This fills the remaining space, by using flexbox. \n     Every toolbar row uses a flexbox row layout. */\n  flex: 1 1 auto;\n}\n.example-container {\n  display: flex;\n  flex-direction: column;\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n}\n.example-is-mobile .example-toolbar {\n  position: fixed;\n  /* Make sure the toolbar will stay on top of the content as it scrolls past. */\n  z-index: 2;\n}\nh1.example-app-name {\n  margin-left: 8px;\n}\n.example-sidenav-container {\n  /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This\n     causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */\n  flex: 1;\n}\n.example-is-mobile .example-sidenav-container {\n  /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the\n     `<body>` to be our scrolling element for mobile layouts. */\n  flex: 1 0 auto;\n}"
+module.exports = "\n/*.bg{\n    background: url('http://blog.hostbaby.com/wp-content/uploads/2014/03/CountryLeather_1920x1234.jpg') no-repeat center;\n    background-repeat: no-repeat;\n    background-size: cover;\n    background-position: top center;\n  }*/\n.mat-toolbar {\n  background-color : transparent\n}\n.noborder{\n  padding: 0;\n  border: none;\n  background: none;\n  margin:20px;\n}\n.inside {\n  position: absolute;\n  top: 0px;\n  left: 0px;\n}\n.fill-remaining-space {\n  /* This fills the remaining space, by using flexbox. \n     Every toolbar row uses a flexbox row layout. */\n  flex: 1 1 auto;\n}\n.example-container {\n  display: flex;\n  flex-direction: column;\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n}\n.example-is-mobile .example-toolbar {\n  position: fixed;\n  /* Make sure the toolbar will stay on top of the content as it scrolls past. */\n  z-index: 2;\n}\nh1.example-app-name {\n  margin-left: 8px;\n  color:#000000;\n}\n.example-sidenav-container {\n  /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This\n     causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */\n  flex: 1;\n}\n.example-is-mobile .example-sidenav-container {\n  /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the\n     `<body>` to be our scrolling element for mobile layouts. */\n  flex: 1 0 auto;\n}"
 
 /***/ }),
 
@@ -41,7 +41,7 @@ module.exports = ".inside {\n  position: absolute;\n  top: 0px;\n  left: 0px;\n}
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n<mat-toolbar color=\"primary\">\n\n  <button mat-icon-button [matMenuTriggerFor]=\"menu\" >\n    <mat-icon>menu</mat-icon>\n  </button>\n  <h1 class=\"example-app-name\">Team Guess What?</h1>\n  <mat-menu #menu=\"matMenu\" [overlapTrigger]=\"false\">\n    <button mat-menu-item (click)=\"onClickHome()\">\n      <mat-icon>home</mat-icon>\n      <span>Home</span>\n    </button>\n    <button mat-menu-item (click)=\"onClickTeam()\">\n      <mat-icon>people_outline</mat-icon>\n      <span>Our Team</span>\n    </button>\n    <button mat-menu-item (click)=\"onClickVideo()\">\n      <mat-icon>videocam</mat-icon>\n      <span>Classes</span>\n    </button>\n    <button mat-menu-item>\n      <mat-icon>exit_to_app</mat-icon>\n      <span>Logout</span>\n    </button>\n  </mat-menu>\n</mat-toolbar>\n\n<app-home [hidden]=\"!showHome\">\n</app-home>\n<app-classes [hidden]=\"!showVideo\">\n</app-classes>\n<app-team [hidden]=\"!showTeam\">\n</app-team>\n<!--\n\n<h2>Log In</h2>\n<div class=\"row\" *ngIf=\"!_userService.token\">\n  <div class=\"col-sm-4\">\n    <label>Username:</label><br />\n    <input type=\"text\" name=\"login-username\" [(ngModel)]=\"user.username\">\n    <span *ngFor=\"let error of _userService.errors.username\"><br />{{ error }}</span></div>\n  <div class=\"col-sm-4\">\n    <label>Password:</label><br />\n    <input type=\"password\" name=\"login-password\" [(ngModel)]=\"user.password\">\n    <span *ngFor=\"let error of _userService.errors.password\"><br />{{ error }}</span>\n  </div>\n  <div class=\"col-sm-4\">\n    <button (click)=\"login()\" class=\"btn btn-primary\">Log In</button>&nbsp;\n  </div>\n  <div class=\"col-sm-12\">\n    <span *ngFor=\"let error of _userService.errors.non_field_errors\">{{ error }}<br /></span>\n  </div>\n</div>\n<div class=\"row\" *ngIf=\"_userService.token\">\n  <div class=\"col-sm-12\">You are logged in as {{ _userService.username }}.<br />\n    Token Expires: {{ _userService.token_expires }}<br />\n    <button (click)=\"refreshToken()\" class=\"btn btn-primary\">Refresh Token</button>&nbsp;\n    <button (click)=\"logout()\" class=\"btn btn-primary\">Log Out</button>&nbsp;\n  </div>\n</div>\n\n<h2 class=\"mt-3\">Micro Blog Posts</h2>\n<div *ngFor=\"let post of posts\">\n  <div class=\"row mb-3\">\n    <label class=\"col-md-2\">By:</label>\n    <div class=\"col-md-2 mb-1\">{{ post.user }}</div>\n    <label class=\"col-md-2\">Date:</label>\n    <div class=\"col-md-6\">{{ post.date }}</div>\n    <div class=\"col-md-12\">{{ post.body }}</div>\n  </div>\n</div>\n\n<h3>Create a new post:</h3>\n\n<div class=\"row mb-1\">\n  <label class=\"col-md-3\">Enter your post:</label>\n  <div class=\"col-md-9 mb-1\"><input type=\"text\" name=\"body\" [(ngModel)]=\"new_post.body\"></div>\n  <div class=\"col-md-2 offset-3\">\n    <button (click)=\"createPost()\" class=\"btn btn-primary\">Save</button>\n  </div>\n</div> -->\n"
+module.exports = "<div class=\"bg\">\n  <mat-toolbar color=\"primary\">\n\n    <img width=240px height=160px src=\"/static/front-end/assets/images/logo.png\">\n      <button mat-menu-item (click)=\"onClickHome()\" class=\"noborder\" >\n        <mat-icon>home</mat-icon>\n        <span>Home</span>\n      </button>\n      <button mat-menu-item (click)=\"onClickTeam()\" class=\"noborder\" >\n        <mat-icon>people_outline</mat-icon>\n        <span>Our Team</span>\n      </button>\n      <button mat-menu-item (click)=\"onClickVideo()\" class=\"noborder\" >\n        <mat-icon>videocam</mat-icon>\n        <span text-align=\"center\">Classes</span>\n      </button>\n      <button mat-menu-item class=\"noborder\" >\n        <mat-icon>exit_to_app</mat-icon>\n        <span>Logout</span>\n      </button>\n</mat-toolbar>\n\n<app-home [hidden]=\"!showHome\">\n</app-home>\n<app-classes [hidden]=\"!showVideo\">\n</app-classes>\n<app-team [hidden]=\"!showTeam\">\n</app-team>\n</div>\n<!--\n\n<h2>Log In</h2>\n<div class=\"row\" *ngIf=\"!_userService.token\">\n  <div class=\"col-sm-4\">\n    <label>Username:</label><br />\n    <input type=\"text\" name=\"login-username\" [(ngModel)]=\"user.username\">\n    <span *ngFor=\"let error of _userService.errors.username\"><br />{{ error }}</span></div>\n  <div class=\"col-sm-4\">\n    <label>Password:</label><br />\n    <input type=\"password\" name=\"login-password\" [(ngModel)]=\"user.password\">\n    <span *ngFor=\"let error of _userService.errors.password\"><br />{{ error }}</span>\n  </div>\n  <div class=\"col-sm-4\">\n    <button (click)=\"login()\" class=\"btn btn-primary\">Log In</button>&nbsp;\n  </div>\n  <div class=\"col-sm-12\">\n    <span *ngFor=\"let error of _userService.errors.non_field_errors\">{{ error }}<br /></span>\n  </div>\n</div>\n<div class=\"row\" *ngIf=\"_userService.token\">\n  <div class=\"col-sm-12\">You are logged in as {{ _userService.username }}.<br />\n    Token Expires: {{ _userService.token_expires }}<br />\n    <button (click)=\"refreshToken()\" class=\"btn btn-primary\">Refresh Token</button>&nbsp;\n    <button (click)=\"logout()\" class=\"btn btn-primary\">Log Out</button>&nbsp;\n  </div>\n</div>\n\n<h2 class=\"mt-3\">Micro Blog Posts</h2>\n<div *ngFor=\"let post of posts\">\n  <div class=\"row mb-3\">\n    <label class=\"col-md-2\">By:</label>\n    <div class=\"col-md-2 mb-1\">{{ post.user }}</div>\n    <label class=\"col-md-2\">Date:</label>\n    <div class=\"col-md-6\">{{ post.date }}</div>\n    <div class=\"col-md-12\">{{ post.body }}</div>\n  </div>\n</div>\n\n<h3>Create a new post:</h3>\n\n<div class=\"row mb-1\">\n  <label class=\"col-md-3\">Enter your post:</label>\n  <div class=\"col-md-9 mb-1\"><input type=\"text\" name=\"body\" [(ngModel)]=\"new_post.body\"></div>\n  <div class=\"col-md-2 offset-3\">\n    <button (click)=\"createPost()\" class=\"btn btn-primary\">Save</button>\n  </div>\n</div> -->\n"
 
 /***/ }),
 
@@ -77,8 +77,8 @@ var AppComponent = /** @class */ (function () {
         this._blogPostService = _blogPostService;
         this._userService = _userService;
         this.title = 'Classroom Smartboard!';
-        this.showVideo = false;
-        this.showHome = true;
+        this.showVideo = true;
+        this.showHome = false;
         this.showTeam = false;
     }
     AppComponent.prototype.ngOnInit = function () {
@@ -124,9 +124,9 @@ var AppComponent = /** @class */ (function () {
                 var post = _a[_i];
                 post.date = new Date(post.date);
             }
-        },
+        }, 
         // the second argument is a function which runs on error
-        function (err) { return console.error(err); },
+        function (err) { return console.error(err); }, 
         // the third argument is a function which runs on completion
         function () { return console.log('done loading posts'); });
     };
@@ -171,12 +171,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _blog_post_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./blog_post.service */ "./src/app/blog_post.service.ts");
-/* harmony import */ var _user_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./user.service */ "./src/app/user.service.ts");
-/* harmony import */ var _classes_classes_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./classes/classes.component */ "./src/app/classes/classes.component.ts");
-/* harmony import */ var _angular_material_divider__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material/divider */ "./node_modules/@angular/material/esm5/divider.es5.js");
-/* harmony import */ var _material_module__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./material.module */ "./src/app/material.module.ts");
+/* harmony import */ var _material_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./material.module */ "./src/app/material.module.ts");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _blog_post_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./blog_post.service */ "./src/app/blog_post.service.ts");
+/* harmony import */ var _user_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./user.service */ "./src/app/user.service.ts");
+/* harmony import */ var _classes_classes_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./classes/classes.component */ "./src/app/classes/classes.component.ts");
+/* harmony import */ var _angular_material_divider__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/material/divider */ "./node_modules/@angular/material/esm5/divider.es5.js");
 /* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
 /* harmony import */ var _team_team_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./team/team.component */ "./src/app/team/team.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
@@ -204,8 +204,8 @@ var AppModule = /** @class */ (function () {
     AppModule = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
             declarations: [
-                _app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"],
-                _classes_classes_component__WEBPACK_IMPORTED_MODULE_8__["ClassesComponent"],
+                _app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"],
+                _classes_classes_component__WEBPACK_IMPORTED_MODULE_9__["ClassesComponent"],
                 _home_home_component__WEBPACK_IMPORTED_MODULE_11__["HomeComponent"],
                 _team_team_component__WEBPACK_IMPORTED_MODULE_12__["TeamComponent"]
             ],
@@ -214,11 +214,11 @@ var AppModule = /** @class */ (function () {
                 _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_2__["BrowserAnimationsModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"],
-                _material_module__WEBPACK_IMPORTED_MODULE_10__["MaterialModule"],
-                _angular_material_divider__WEBPACK_IMPORTED_MODULE_9__["MatDividerModule"]
+                _material_module__WEBPACK_IMPORTED_MODULE_5__["MaterialModule"],
+                _angular_material_divider__WEBPACK_IMPORTED_MODULE_10__["MatDividerModule"]
             ],
-            providers: [_blog_post_service__WEBPACK_IMPORTED_MODULE_6__["BlogPostService"], _user_service__WEBPACK_IMPORTED_MODULE_7__["UserService"]],
-            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]]
+            providers: [_blog_post_service__WEBPACK_IMPORTED_MODULE_7__["BlogPostService"], _user_service__WEBPACK_IMPORTED_MODULE_8__["UserService"]],
+            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
@@ -293,7 +293,7 @@ var BlogPostService = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* DashboardComponent's private CSS styles */\n[class*='col-'] {\n    float: left;\n    padding-right: 20px;\n    padding-bottom: 20px;\n  }\n[class*='col-']:last-of-type {\n    padding-right: 0;\n  }\na {\n    text-decoration: none;\n  }\n*, *:after, *:before {\n    box-sizing: border-box;\n  }\nh3 {\n    widows: 200px; \n    margin: 50px;\n    color: #4053AF;\n    margin-bottom: 0;\n  }\nh4 {\n    position: relative;\n  }\n.grid {\n    margin: 50px;\n  }\n.col-1-4 {\n    width: 25%;\n    height: 10%;\n  }\n.module {\n    padding: 20px;\n    text-align: center;\n    color: #eee;\n    height: 120px;\n    background-color: #4053AF;\n    border-radius: 2px;\n  }\n.module:hover {\n    background-color: #EEE;\n    cursor: pointer;\n    color: #4053AF;\n  }\n.grid-pad {\n    padding: 10px 0;\n  }\n.grid-pad > [class*='col-']:last-of-type {\n    padding-right: 20px;\n  }\n@media (max-width: 600px) {\n    .module {\n      font-size: 10px;\n      max-height: 75px; }\n  }\n@media (max-width: 1024px) {\n    .grid {\n      margin: 0;\n    }\n    .module {\n      min-width: 60px;\n    }\n  }\n.hr {\n    display: block;\n    margin: 20px 0 20px 0;\n    border-top: 1px solid rgba(0, 0, 0, .12);\n    \n  }\n/*\n  Copyright 2017-2018 Google Inc. All Rights Reserved.\n  Use of this source code is governed by an MIT-style license that\n  can be found in the LICENSE file at http://angular.io/license\n  */"
+module.exports = "/* DashboardComponent's private CSS styles */\n[class*='col-'] {\n    float: left;\n    padding-right: 20px;\n    padding-bottom: 20px;\n  }\n[class*='col-']:last-of-type {\n    padding-right: 0;\n  }\na {\n    text-decoration: none;\n  }\n*, *:after, *:before {\n    box-sizing: border-box;\n  }\nh3 {\n    widows: 200px; \n    margin: 50px;\n    color: #2A3A75;\n    margin-bottom: 0;\n  }\nh4 {\n    position: relative;\n  }\n.grid {\n    margin: 50px;\n  }\n.col-1-4 {\n    width: 25%;\n    height: 10%;\n  }\n.module {\n    padding: 20px;\n    text-align: center;\n    color: #eee;\n    height: 120px;\n    background-color: #2A3A75;\n    border-radius: 2px;\n  }\n.module:hover {\n    background-color: #EEE;\n    cursor: pointer;\n    color: #2A3A75;\n  }\n.grid-pad {\n    padding: 10px 0;\n  }\n.grid-pad > [class*='col-']:last-of-type {\n    padding-right: 20px;\n  }\n@media (max-width: 600px) {\n    .module {\n      font-size: 10px;\n      max-height: 75px; }\n  }\n@media (max-width: 1024px) {\n    .grid {\n      margin: 0;\n    }\n    .module {\n      min-width: 60px;\n    }\n  }\n.hr {\n    display: block;\n    margin: 50px 0 50px 0;\n    border-top: 1px solid rgba(0, 0, 0, .12);\n    \n  }\n/*\n  Copyright 2017-2018 Google Inc. All Rights Reserved.\n  Use of this source code is governed by an MIT-style license that\n  can be found in the LICENSE file at http://angular.io/license\n  */"
 
 /***/ }),
 
@@ -304,7 +304,7 @@ module.exports = "/* DashboardComponent's private CSS styles */\n[class*='col-']
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h3>Your Current Classes</h3>\n<mat-divider class =\"hr\"></mat-divider>\n<div class=\"grid grid-pad\">\n  <a *ngFor=\"let class of newclass\" class=\"col-1-4\">\n    <div class=\"module hero\">\n      <h4>{{class.name}}</h4>\n    </div>\n  </a>\n</div>"
+module.exports = "<h3>Classrooms\n</h3>\n<mat-divider class =\"hr\"></mat-divider>\n<div class=\"grid grid-pad\">\n  <a *ngFor=\"let class of newclass\" class=\"col-1-4\">\n    <div class=\"module hero\">\n      <h4>{{class.name}}</h4>\n    </div>\n  </a>\n</div>"
 
 /***/ }),
 
@@ -319,6 +319,7 @@ module.exports = "<h3>Your Current Classes</h3>\n<mat-divider class =\"hr\"></ma
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClassesComponent", function() { return ClassesComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _mockclass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../mockclass */ "./src/app/mockclass.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -329,8 +330,10 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var ClassesComponent = /** @class */ (function () {
     function ClassesComponent() {
+        this.newclass = _mockclass__WEBPACK_IMPORTED_MODULE_1__["CLASSES"];
     }
     ClassesComponent.prototype.ngOnInit = function () {
     };
@@ -367,7 +370,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"text-align:center\">\n  <h1>\n    Welcome to SmartBoard!\n  </h1>\n  <img width=\"300\" alt=\"Angular Logo\" src=\"/static/front-end/assets/images/logo.jpeg\">\n</div>\n\n<ul>\n  <h4>\n    SmartBoard is an app that can stream blackboard during classes. They are a good tool to help you get focused.\n    Please click on the menu to explore.\n    </h4>\n</ul>"
+module.exports = "<div style=\"text-align:center\">\n  <h1>\n    Welcome to SmartBoard!\n  </h1>\n  <img width=\"300\" alt=\"Angular Logo\" src=\"/static/front-end/assets/images/logo.jpeg\">\n</div>\n\n<ul>\n  <h4>\n    SmartBoard is an app that can stream blackboard during classes. They are a good tool to help you get focused.\n    Please click on the menu to explore.\n    </h4>\n</ul>\n"
 
 /***/ }),
 
@@ -458,6 +461,26 @@ var MaterialModule = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/mockclass.ts":
+/*!******************************!*\
+  !*** ./src/app/mockclass.ts ***!
+  \******************************/
+/*! exports provided: CLASSES */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CLASSES", function() { return CLASSES; });
+var CLASSES = [
+    { id: 11, name: 'GHC4215' },
+    { id: 12, name: 'Wean7500' },
+    { id: 13, name: 'Rashid Auditorium' },
+    { id: 14, name: 'GHC4401' },
+];
+
+
+/***/ }),
+
 /***/ "./src/app/team/team.component.css":
 /*!*****************************************!*\
   !*** ./src/app/team/team.component.css ***!
@@ -465,7 +488,7 @@ var MaterialModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* DashboardComponent's private CSS styles */\n[class*='col-'] {\n    float: left;\n    padding-right: 20px;\n    padding-bottom: 20px;\n  }\n[class*='col-']:last-of-type {\n    padding-right: 0;\n  }\na {\n    text-decoration: none;\n  }\n*, *:after, *:before {\n    box-sizing: border-box;\n  }\nh3 {\n    widows: 200px; \n    margin: 50px;\n    color: #4053AF;\n    margin-bottom: 0;\n  }\nh4 {\n    position: relative;\n  }\n.grid {\n    margin: 50px;\n  }\n.col-1-4 {\n    width: 25%;\n    height: 10%;\n  }\n.module {\n    padding: 20px;\n    text-align: center;\n    color: #eee;\n    height: 175px;\n    width: 175px;\n    background-image: url(\"elvin.jpg\");\n    background-repeat: no-repeat;\n    background-size: cover;\n    border-radius: 2px;\n  }\n.module1 {\n    padding: 20px;\n    text-align: center;\n    color: #eee;\n    height: 175px;\n    width: 175px;\n    background-image: url(\"yiwen.jpg\");\n    background-repeat: no-repeat;\n    background-size: cover;\n    border-radius: 2px;\n  }\n.module:hover {\n    background-color: #EEE;\n    cursor: pointer;\n    color: #4053AF;\n  }\n.module1:hover {\n    background-color: #EEE;\n    cursor: pointer;\n    color: #4053AF;\n  }\n.module2 {\n    padding: 20px;\n    text-align: center;\n    color: #eee;\n    height: 175px;\n    width: 175px;\n    background-image: url(\"killian.jpg\");\n    background-repeat: no-repeat;\n    background-size: cover;\n    border-radius: 2px;\n  }\n.module2:hover {\n    background-color: #EEE;\n    cursor: pointer;\n    color: #4053AF;\n  }\n.module3 {\n    padding: 20px;\n    text-align: center;\n    color: #eee;\n    height: 175px;\n    width: 175px;\n    background-image: url(\"jared.jpg\");\n    background-repeat: no-repeat;\n    background-size: cover;\n    border-radius: 2px;\n  }\n.module3:hover {\n    background-color: #EEE;\n    cursor: pointer;\n    color: #4053AF;\n  }\n.grid-pad {\n    padding: 10px 0;\n  }\n.grid-pad > [class*='col-']:last-of-type {\n    padding-right: 20px;\n  }\n@media (max-width: 600px) {\n    .module {\n      font-size: 10px;\n      max-height: 75px; }\n  }\n@media (max-width: 1024px) {\n    .grid {\n      margin: 0;\n    }\n    .module {\n      min-width: 60px;\n    }\n  }\n/*\n  Copyright 2017-2018 Google Inc. All Rights Reserved.\n  Use of this source code is governed by an MIT-style license that\n  can be found in the LICENSE file at http://angular.io/license\n  */"
+module.exports = "/* DashboardComponent's private CSS styles */\n[class*='col-'] {\n    float: left;\n    padding-right: 20px;\n    padding-bottom: 20px;\n  }\n[class*='col-']:last-of-type {\n    padding-right: 0;\n  }\na {\n    text-decoration: none;\n  }\n*, *:after, *:before {\n    box-sizing: border-box;\n  }\nh3 {\n    widows: 200px; \n    margin: 50px;\n    color: #4053AF;\n    margin-bottom: 0;\n  }\nh4 {\n    position: relative;\n  }\n.grid {\n    margin: 50px;\n  }\n.col-1-4 {\n    width: 25%;\n    height: 10%;\n  }\n.module {\n    padding: 20px;\n    text-align: center;\n    color: #eee;\n    height: 175px;\n    width: 175px;\n    background-image: url(\"/static/front-end/assets/images/elvin.jpg\");\n    background-repeat: no-repeat;\n    background-size: cover;\n    border-radius: 2px;\n  }\n.module1 {\n    padding: 20px;\n    text-align: center;\n    color: #eee;\n    height: 175px;\n    width: 175px;\n    background-image: url(\"/static/front-end/assets/images/yiwen.jpg\");\n    background-repeat: no-repeat;\n    background-size: cover;\n    border-radius: 2px;\n  }\n.module:hover {\n    background-color: #EEE;\n    cursor: pointer;\n    color: #2A3A75;\n  }\n.module1:hover {\n    background-color: #EEE;\n    cursor: pointer;\n    color: #2A3A75;\n  }\n.module2 {\n    padding: 20px;\n    text-align: center;\n    color: #eee;\n    height: 175px;\n    width: 175px;\n    background-image: url(\"/static/front-end/assets/images/killian.jpg\");\n    background-repeat: no-repeat;\n    background-size: cover;\n    border-radius: 2px;\n  }\n.module2:hover {\n    background-color: #EEE;\n    cursor: pointer;\n    color: #2A3A75;\n  }\n.module3 {\n    padding: 20px;\n    text-align: center;\n    color: #eee;\n    height: 175px;\n    width: 175px;\n    background-image: url(\"/static/front-end/assets/images/jared.jpg\");\n    background-repeat: no-repeat;\n    background-size: cover;\n    border-radius: 2px;\n  }\n.module3:hover {\n    background-color: #EEE;\n    cursor: pointer;\n    color: #2A3A75;\n  }\n.grid-pad {\n    padding: 10px 0;\n  }\n.grid-pad > [class*='col-']:last-of-type {\n    padding-right: 20px;\n  }\n@media (max-width: 600px) {\n    .module {\n      font-size: 10px;\n      max-height: 75px; }\n  }\n@media (max-width: 1024px) {\n    .grid {\n      margin: 0;\n    }\n    .module {\n      min-width: 60px;\n    }\n  }\n/*\n  Copyright 2017-2018 Google Inc. All Rights Reserved.\n  Use of this source code is governed by an MIT-style license that\n  can be found in the LICENSE file at http://angular.io/license\n  */"
 
 /***/ }),
 
@@ -642,6 +665,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser-dynamic */ "./node_modules/@angular/platform-browser-dynamic/fesm5/platform-browser-dynamic.js");
 /* harmony import */ var _app_app_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app/app.module */ "./src/app/app.module.ts");
 /* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var hammerjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! hammerjs */ "./node_modules/hammerjs/hammer.js");
+/* harmony import */ var hammerjs__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(hammerjs__WEBPACK_IMPORTED_MODULE_4__);
+
 
 
 
